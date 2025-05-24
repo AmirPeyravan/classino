@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Middleware\IsAdmin;
 
 Route::get('/', function () {
     return view('index');
@@ -21,10 +23,8 @@ Route::get('/contact', function () {
 
 
 
-Route::get('/dashboard', function () {
-    return view('admin-dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
+Route::get('/dashboard', [AdminController::class, 'dashboard'])
+    ->middleware([IsAdmin::class])->name('dashboard');
 
 
 
