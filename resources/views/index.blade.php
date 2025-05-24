@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 @section('content')
     <!-- بخش جستجو -->
     <section class="search-container">
@@ -12,7 +12,8 @@
     <section class="hero">
         <div class="hero-content">
             <h2>مسیر یادگیری خود را با کلاسینو آغاز کنید</h2>
-            <p>با بیش از 500 دوره آموزشی در زمینه‌های مختلف، مهارت‌های جدید را بیاموزید و آینده شغلی خود را متحول کنید.</p>
+            <p>با بیش از 500 دوره آموزشی در زمینه‌های مختلف، مهارت‌های جدید را بیاموزید و آینده شغلی خود را متحول
+                کنید.</p>
             <a href="#" class="hero-button">مشاهده دوره‌ها</a>
         </div>
     </section>
@@ -24,7 +25,7 @@
             <!-- دوره 1 -->
             <div class="course-card">
                 <div class="course-image">
-                    <img src="/api/placeholder/300/180" alt="آموزش برنامه‌نویسی پایتون">
+                    <img src="/storage/course-image/php.png" alt="آموزش برنامه‌نویسی پایتون">
                 </div>
                 <div class="course-content">
                     <h3 class="course-title">آموزش برنامه‌نویسی پایتون از صفر تا پیشرفته</h3>
@@ -39,7 +40,7 @@
             <!-- دوره 2 -->
             <div class="course-card">
                 <div class="course-image">
-                    <img src="/api/placeholder/300/180" alt="آموزش شبکه‌های کامپیوتری">
+                    <img src="/storage/course-image/php.png" alt="آموزش شبکه‌های کامپیوتری">
                 </div>
                 <div class="course-content">
                     <h3 class="course-title">مفاهیم پایه شبکه‌های کامپیوتری</h3>
@@ -54,7 +55,7 @@
             <!-- دوره 3 -->
             <div class="course-card">
                 <div class="course-image">
-                    <img src="/api/placeholder/300/180" alt="آموزش طراحی وب">
+                    <img src="/storage/course-image/php.png" alt="آموزش طراحی وب">
                 </div>
                 <div class="course-content">
                     <h3 class="course-title">آموزش طراحی وب ریسپانسیو با HTML و CSS</h3>
@@ -69,7 +70,7 @@
             <!-- دوره 4 -->
             <div class="course-card">
                 <div class="course-image">
-                    <img src="/api/placeholder/300/180" alt="آموزش یادگیری ماشین">
+                    <img src="/storage/course-image/php.png" alt="آموزش یادگیری ماشین">
                 </div>
                 <div class="course-content">
                     <h3 class="course-title">آموزش یادگیری ماشین با پایتون</h3>
