@@ -26,6 +26,7 @@
             <tr>
                 <th>کاربر</th>
                 <th>نقش</th>
+                <th>عملیات</th>
             </tr>
             </thead>
             <tbody>
@@ -36,6 +37,9 @@
                         <option>ادمین</option>
                         <option>کاربر</option>
                     </select>
+                </td>
+                <td>
+                    <button class="action-btn">اعمال</button>
                 </td>
             </tr>
             </tbody>

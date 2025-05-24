@@ -4,10 +4,14 @@
     font-weight: normal;
     font-style: normal;
 }
+* {
+    box-sizing: border-box; /* جلوگیری از سرریز المان‌ها */
+}
 body {
     font-family: 'Vazir', Tahoma, Arial, sans-serif;
     background-color: #e0e0e0;
     margin: 0;
+    direction: rtl; /* اطمینان از راست‌به‌چپ بودن */
 }
 .admin-container {
     max-width: 1200px;
@@ -27,6 +31,7 @@ body {
     padding: 8px 15px;
     border-radius: 5px;
     background: #224477;
+    display: inline-block;
 }
 .tab-content {
     display: none;
@@ -74,12 +79,15 @@ h2 {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    max-width: 100%; /* محدود کردن عرض */
 }
 .search-box input, .search-box select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: 'Vazir', Tahoma, Arial, sans-serif;
+    width: 100%;
+    max-width: 300px; /* محدود کردن عرض اینپوت‌ها */
 }
 table {
     width: 100%;
@@ -103,6 +111,7 @@ button, select {
     border-radius: 5px;
     cursor: pointer;
     font-family: 'Vazir', Tahoma, Arial, sans-serif;
+    max-width: 150px; /* محدود کردن عرض دکمه‌ها و سلکت‌ها */
 }
 .action-btn {
     background: #336699;
@@ -114,6 +123,9 @@ button, select {
 }
 .status-select {
     background: #e6f0ff;
+}
+form {
+    max-width: 600px; /* محدود کردن عرض فرم‌ها */
 }
 form label {
     display: block;
@@ -130,6 +142,8 @@ form input, form select, form textarea {
 form button {
     background: #336699;
     color: #fff;
+    width: 100%;
+    max-width: 150px; /* محدود کردن عرض دکمه فرم */
 }
 @media (max-width: 768px) {
     .stats {
@@ -141,9 +155,15 @@ form button {
     .search-box {
         flex-direction: column;
     }
+    .search-box input, .search-box select {
+        max-width: 100%; /* در موبایل عرض کامل */
+    }
 }
 @media (max-width: 576px) {
-    th, td, input, select, textarea {
+    th, td, input, select, textarea, button {
         font-size: 14px;
+    }
+    form {
+        max-width: 100%; /* در موبایل عرض کامل */
     }
 }
