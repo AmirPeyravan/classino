@@ -15,7 +15,7 @@
                     <li>
                         <form method="POST" action="{{ route('logout') }}" style="display: inline;">
                             @csrf
-                            <li><a href="/dashboard">{{ Auth::user()->name }}</a></li>
+                            <li><a href="/adminDashboard">{{ Auth::user()->name }}</a></li>
                         </form>
                     </li>
                 @else
