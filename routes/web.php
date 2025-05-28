@@ -3,7 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Middleware\IsAdmin;
+use App\Http\Controllers\Teacher\TeacherController;
+use App\Http\Controllers\Student\StudentController;
+use App\Http\Middleware\RoleCheck;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::prefix('/')->group(function () {
     Route::get('/', function () {
@@ -24,15 +27,20 @@ Route::prefix('/')->group(function () {
 });
 
 Route::get('/adminDashboard', [AdminController::class, 'dashboard'])
-    ->middleware([IsAdmin::class])->name('dashboard');
+    ->middleware([RoleCheck::class])
+    ->name('adminDashboard');
 
-Route::get('/teacherDashboard', function () {
-    return view('teacherDashboard');
-})->name('teacherDashboard');
+Route::get('/teacherDashboard', [TeacherController::class, 'dashboard'])
+    ->middleware([RoleCheck::class])
+    ->name('teacherDashboard');
 
-Route::get('/studentDashboard', function () {
-    return view('studentDashboard');
-})->name('studentDashboard');
+Route::get('/studentDashboard', [StudentController::class, 'dashboard'])
+    ->middleware([RoleCheck::class])
+    ->name('studentDashboard');
+
+// Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+//     ->name('logout');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

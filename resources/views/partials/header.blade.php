@@ -12,10 +12,28 @@
                 <li><a href="{{ route('teachers') }}">مدرسین</a></li>
                 <li><a href="{{ route('contact') }}">تماس با ما</a></li>
                 @auth
+
+                    @if (Auth::user()->role === 'admin')
+                        <li><a href="{{ route('adminDashboard') }}">پنل مدیریت</a></li>
+                    @endif
+
+                    @if (Auth::user()->role === 'teacher')
+                        <li><a href="{{ route('teacherDashboard') }}">پنل اساتید</a></li>
+                    @endif
+
+                    @if (Auth::user()->role === 'student')
+                        <li><a href="{{ route('studentDashboard') }}">پنل دانشجویان</a></li>
+                    @endif
+
+
+                    <li><a href="/adminDashboard">{{ Auth::user()->name }}</a></li>
+
                     <li>
                         <form method="POST" action="{{ route('logout') }}" style="display: inline;">
                             @csrf
-                            <li><a href="/adminDashboard">{{ Auth::user()->name }}</a></li>
+                           <button type="submit" style="background: none; border: none; color: white; padding: 0; font: inherit; cursor: pointer;">
+                                    خروج
+                           </button>
                         </form>
                     </li>
                 @else
