@@ -1,4 +1,4 @@
-<div id="dashboard" class="tab-content active">
+<div id="dashboard">
     <h2>داشبورد</h2>
     <div class="stats">
         <div class="stat-card">

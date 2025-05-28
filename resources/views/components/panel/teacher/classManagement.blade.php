@@ -1,4 +1,4 @@
-<div id="class-management" class="tab-content">
+<div id="class-management">
     <h2>مدیریت کلاس‌ها</h2>
     <button class="action-btn" onclick="document.getElementById('create-class-form').style.display='block'">ایجاد کلاس جدید</button>
     <form id="create-class-form" style="display: none;">
