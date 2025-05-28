@@ -27,8 +27,12 @@ Route::get('/adminDashboard', [AdminController::class, 'dashboard'])
     ->middleware([IsAdmin::class])->name('dashboard');
 
 Route::get('/teacherDashboard', function () {
-    return view('teacher-dashboard');
+    return view('teacherDashboard');
 })->name('teacherDashboard');
+
+Route::get('/studentDashboard', function () {
+    return view('studentDashboard');
+})->name('studentDashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
