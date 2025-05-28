@@ -1,4 +1,4 @@
-<div id="upload-content" class="tab-content">
+<div id="upload-content">
     <h2>آپلود محتوای آموزشی</h2>
     <form>
         <label for="class-select">انتخاب کلاس</label>

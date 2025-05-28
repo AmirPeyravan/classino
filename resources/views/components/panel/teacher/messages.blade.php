@@ -1,4 +1,4 @@
-<div id="messages" class="tab-content">
+<div id="messages">
     <h2>پیام‌ها و اعلان‌ها</h2>
     <form>
         <label for="message-class">انتخاب کلاس</label>
