@@ -17,17 +17,53 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
         [
-            'name' => 'adminUser',
-            'email' => 'admin@example.com',
+            'name' => 'studentUser1',
+            'email' => 'student1@example.com',
             'password' => Hash::make('password'),
-            'role' => 'admin',
+            'role' => 'student',
             'created_at' => now(),
             'updated_at' => now(),
         ],
 
         [
-            'name' => 'teacherUser',
-            'email' => 'teacher@example.com',
+            'name' => 'studentUser2',
+            'email' => 'student2@example.com',
+            'password' => Hash::make('password'),
+            'role' => 'student',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+
+        [
+            'name' => 'studentUser3',
+            'email' => 'student3@example.com',
+            'password' => Hash::make('password'),
+            'role' => 'student',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+
+        [
+            'name' => 'studentUser4',
+            'email' => 'student4@example.com',
+            'password' => Hash::make('password'),
+            'role' => 'student',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+
+        [
+            'name' => 'studentUser5',
+            'email' => 'student5@example.com',
+            'password' => Hash::make('password'),
+            'role' => 'student',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+
+        [
+            'name' => 'teacherUser6',
+            'email' => 'teacher6@example.com',
             'password' => Hash::make('password'),
             'role' => 'teacher',
             'created_at' => now(),
@@ -35,10 +71,28 @@ class UserSeeder extends Seeder
         ],
 
         [
-            'name' => 'studentUser',
-            'email' => 'student@example.com',
+            'name' => 'teacherUser7',
+            'email' => 'teacher7@example.com',
             'password' => Hash::make('password'),
-            'role' => 'student',
+            'role' => 'teacher',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+
+        [
+            'name' => 'teacherUser8',
+            'email' => 'teacher8@example.com',
+            'password' => Hash::make('password'),
+            'role' => 'teacher',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+
+        [
+            'name' => 'adminUser',
+            'email' => 'admin@example.com',
+            'password' => Hash::make('password'),
+            'role' => 'admin',
             'created_at' => now(),
             'updated_at' => now(),
         ],
