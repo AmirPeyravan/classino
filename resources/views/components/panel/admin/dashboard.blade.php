@@ -3,16 +3,16 @@
     <h2>داشبورد</h2>
     <div class="stats">
         <div class="stat-card">
-            <h3>کاربران</h3>
-            <p>150</p>
+            <h3>دانشجویان</h3>
+            <p>{{ $studentsCount }}</p>
         </div>
         <div class="stat-card">
             <h3>کلاس‌ها</h3>
-            <p>30</p>
+            <p>{{ $coursesCount }}</p>
         </div>
         <div class="stat-card">
             <h3>دسته‌بندی‌ها</h3>
-            <p>10</p>
+            <p>{{ $categoriesCount }}</p>
         </div>
     </div>
     <canvas id="sales-chart" style="max-height: 300px;"></canvas>
