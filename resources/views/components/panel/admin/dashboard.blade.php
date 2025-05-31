@@ -19,24 +19,24 @@
     <div style="margin-top: 20px;">
         <h2>آخرین کلاس‌های ثبت‌شده</h2>
         <ul class="recent-list">
-                @foreach($latestCourses as $course)
+            @foreach ($latestCourses as $course)
                 <li>
                     {{ $course->title }}
-                  - {{ jdate($course->created_at)->format('Y/m/d') }}
+                    - {{ jdate($course->created_at)->format('Y/m/d') }}
                 </li>
-                @endforeach
+            @endforeach
         </ul>
     </div>
     <div>
         <h2>آخرین ثبت‌نام کاربران</h2>
         <ul class="recent-list">
-@foreach($latestEnrollments as $enrollment)
-    <li>
-        {{ $enrollment->user->name }} در
-        "{{ $enrollment->course->title }}" ثبت‌نام کرد -
-        {{ $enrollment->enrolled_at_jalali }}
-    </li>
-@endforeach
+            @foreach ($latestEnrollments as $enrollment)
+                <li>
+                    {{ $enrollment->user->name }} در
+                    "{{ $enrollment->course->title }}" ثبت‌نام کرد -
+                    {{ $enrollment->enrolled_at_jalali }}
+                </li>
+            @endforeach
 
         </ul>
     </div>

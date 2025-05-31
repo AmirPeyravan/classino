@@ -10,37 +10,57 @@ use App\Models\Category;
 use App\Models\Enrollment;
 use Morilog\Jalali\Jalalian;
 
-
 class AdminController extends Controller
 {
-public function dashboard()
-{
-    $studentsCount = User::where('role', 'student')->count();
-    $coursesCount = Course::count();
-    $categoriesCount = Category::count();
-    $enrollmentsCount = Enrollment::count();
+    public function dashboard(Request $request)
+    {
+        $studentsCount = User::where('role', 'student')->count();
+        $studentsName = User::all();
+        $coursesCount = Course::count();
+        $categoriesCount = Category::count();
+        $categories = Category::all();
+        $enrollmentsCount = Enrollment::count();
 
-    $latestCourses = Course::latest()
-        ->take(5)
-        ->get();
+        $latestCourses = Course::latest()
+            ->take(5)
+            ->get();
 
-    $latestEnrollments = Enrollment::orderBy('enrolled_at', 'desc')
+        $latestEnrollments = Enrollment::orderBy('enrolled_at', 'desc')
         ->with(['user', 'course'])
         ->take(5)
         ->get()
         ->transform(function ($enrollment) {
-            $enrollment->enrolled_at_jalali = Jalalian::fromDateTime($enrollment->enrolled_at)->format('Y/m/d');
+            $enrollment->enrolled_at_jalali = Jalalian::fromDateTime($enrollment->enrolled_at)
+            ->format('Y/m/d');
+
             return $enrollment;
         });
 
-    return view('adminDashboard', compact(
-        'studentsCount',
-        'coursesCount',
-        'categoriesCount',
-        'enrollmentsCount',
-        'latestCourses',
-        'latestEnrollments'
-    ));
-}
+        $search = $request->input('search');
+        $role = $request->input('role');
 
+        $users = User::query()
+            ->when($search, function ($query, $search) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('name', 'like', "%{$search}%")
+                      ->orWhere('email', 'like', "%{$search}%");
+                });
+            })
+            ->when($role, function ($query, $role) {
+                $query->where('role', $role);
+            })
+            ->get();
+
+        return view('adminDashboard', compact(
+            'studentsCount',
+            'coursesCount',
+            'categoriesCount',
+            'enrollmentsCount',
+            'latestCourses',
+            'latestEnrollments',
+            'studentsName',
+            'users',
+            'categories'
+        ));
+    }
 }
