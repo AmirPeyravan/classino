@@ -38,9 +38,6 @@ Route::get('/studentDashboard', [StudentController::class, 'dashboard'])
     ->middleware([RoleCheck::class])
     ->name('studentDashboard');
 
-// Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
-//     ->name('logout');
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
