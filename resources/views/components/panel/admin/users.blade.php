@@ -12,6 +12,7 @@
             <option value="">همه نقش‌ها</option>
             <option value="admin" {{ request('role') == 'admin' ? 'selected' : '' }}>ادمین</option>
             <option value="student" {{ request('role') == 'student' ? 'selected' : '' }}>کاربر</option>
+            <option value="teacher" {{ request('role') == 'teacher' ? 'selected' : '' }}>استاد</option>
         </select>
     </form>
 
