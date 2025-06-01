@@ -15,7 +15,9 @@ class AdminController extends Controller
     public function dashboard(Request $request)
     {
         $studentsCount = User::where('role', 'student')->count();
-        $studentsName = User::all();
+        $teachers = User::where('role', 'teacher')->get();
+        $getAllUsers = User::all();
+        $courses = Course::all();
         $coursesCount = Course::count();
         $categoriesCount = Category::count();
         $categories = Category::all();
@@ -58,9 +60,11 @@ class AdminController extends Controller
             'enrollmentsCount',
             'latestCourses',
             'latestEnrollments',
-            'studentsName',
+            'getAllUsers',
             'users',
-            'categories'
+            'categories',
+            'teachers',
+            'courses',
         ));
     }
 }
