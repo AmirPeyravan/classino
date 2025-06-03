@@ -1,6 +1,6 @@
 @extends('layouts.panel.admin.admin')
 
-
+@section('content')
 
     @php
         $tab = request('tab', 'dashboard');
