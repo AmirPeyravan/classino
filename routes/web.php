@@ -34,7 +34,9 @@ Route::get('/teacherDashboard', [TeacherController::class, 'dashboard'])
     ->middleware([RoleCheck::class])
     ->name('teacherDashboard');
 
-
+Route::get('/studentDashboard', [StudentController::class, 'dashboard'])
+    ->middleware([RoleCheck::class])
+    ->name('studentDashboard');
 
 
 Route::middleware('auth')->group(function () {
