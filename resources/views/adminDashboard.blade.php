@@ -2,6 +2,10 @@
 
 @section('content')
 
+    @php
+        $tab = request('tab', 'dashboard');
+    @endphp
+
 
     <div class="tabs-wrapper">
 
